@@ -6,7 +6,7 @@ from app.core.config import settings
 # If the URL is just postgresql://, we replace it.
 DB_URL = settings.DATABASE_URL
 if DB_URL.startswith("postgresql://"):
-    DB_URL = DB_URL.replace("postgresql://", "postgresql+asyncpg://", 1)
+    DB_URL = DB_URL.replace("postgresql://", "postgresql+psycopg://", 1)
 
 engine = create_async_engine(
     DB_URL,

@@ -1,6 +1,8 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
+from app.api.routes import auth, tickets
+
 app = FastAPI(
     title="SignalDesk AI",
     description="AI-powered customer workflow and intelligence platform.",
@@ -14,6 +16,9 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+app.include_router(auth.router, prefix="/api/auth", tags=["auth"])
+app.include_router(tickets.router, prefix="/api/tickets", tags=["tickets"])
 
 @app.get("/health")
 async def health_check():
