@@ -1,0 +1,25 @@
+# Environments
+.env
+.env.*
+!.env.example
+venv/
+env/
+ENV/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Next.js
+.next/
+out/
+node_modules/
+.pnp
+.pnp.js
+coverage/
+
+# OS
+.DS_Store
+Thumbs.db
